@@ -1,4 +1,4 @@
-x,a = int(input()),[64]
+x,a=int(input()),[64]
 while sum(a)>x:
     a.sort()
     a[0]/=2
