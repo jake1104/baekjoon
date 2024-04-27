@@ -1,22 +1,21 @@
 from collections import deque
-import sys
-N,M,K,X=map(int,sys.stdin.readline().split())
-L=[[] for _ in range(N+1)]
-for _ in range(M):
+N,M,K,X=map(int,input().split())
+g=[[] for _ in range(N+1)]
+for i in range(M):
   a,b=map(int,input().split())
-  L[a].append(b)
+  g[a].append(b)
 d=[-1]*(N+1)
 d[X]=0
 q=deque([X])
 while q:
   v=q.popleft()
-  for h in L[v]:
-    if d[h]==-1:
-      d[h]=d[v]+1
-      q.append(h)
+  for i in g[v]:
+    if d[i]==-1:
+      d[i]=d[v]+1
+      q.append(i)
 if K in d:
   for i in range(1,N+1):
-    if d[i]==K:
+    if K==d[i]:
       print(i)
 else:
   print(-1)
