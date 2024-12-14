@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 110272 KB, 시간: 128 ms
+메모리: 1112 KB, 시간: 0 ms
 
 ### 분류
 
@@ -12,7 +12,7 @@
 
 ### 제출 일자
 
-2024년 4월 7일 10:33:50
+2024년 12월 14일 14:55:30
 
 ### 문제 설명
 
@@ -24,7 +24,7 @@
 
 <p>다음 예는 3개의 벨트와 4개의 바퀴에 대한 정보가 주어진 경우이다. 이때 벨트 형태는 0자 형태(안꼬인 형태)면 0으로, 8자 형태(꼬인 형태)면 1로 나타낸다.</p>
 
-<p><img alt="" src="" style="height:124px; width:276px"></p>
+<p><img alt="" src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/10834/1.png" style="height:124px; width:276px"></p>
 
 <table class="table table-bordered" style="width:40%">
 	<thead>
