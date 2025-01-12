@@ -1,6 +1,8 @@
 #include <stdio.h>
 int N, M;
-bool p(int arr[], int n) {
+int arr[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+int n = 0;
+bool p(int n) {
     bool c = true;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
@@ -9,8 +11,8 @@ bool p(int arr[], int n) {
     }
     return c;
 }
-void f(int arr[], int n) {
-    if (!p(arr, n)) return;
+void f(int n) {
+    if (!p(n)) return;
     if (n == M) {
         for (int i = 0; i < M; i++) {
             printf("%d ", arr[i]);
@@ -19,16 +21,11 @@ void f(int arr[], int n) {
         return;
     }
     for (int i = 1; i <= N; i++) {
-        int fa[8];
-        for (int j = 0; j < n; j++) {
-            fa[j] = arr[j];
-        }
-        fa[n] = i;
-        f(fa, n + 1);
+        arr[n] = i;
+        f(n + 1);
     }
 }
 int main() {
     scanf("%d %d", &N, &M);
-    int temp[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
-    f(temp, 0);
+    f(0);
 }
