@@ -1,7 +1,6 @@
 #include <stdio.h>
 int N, M;
 int arr[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
-int n = 0;
 bool p(int n) {
     bool c = true;
     for (int i = 0; i < n; i++) {
