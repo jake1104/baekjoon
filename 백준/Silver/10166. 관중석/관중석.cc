@@ -1,17 +1,17 @@
-#include <cstdio>
-#include <set>
-#include <cmath>
+#include<bits/stdc++.h>
 using namespace std;
-
+bool c[2001][2001];
 int main() {
-    int D1, D2;
-    scanf("%d %d", &D1, &D2);
-    set<double> angles;
-    for (int i = D1; i <= D2; ++i) {
-        for (int j = 1; j <= i; ++j) {
-            double angle = 360.0 * j / i;
-            angles.insert(angle);
+    int a, b, ans = 1;
+    cin >> a >> b;
+    for (int i = a; i <= b; i++) {
+        for (int j = 1; j < i; j++) {
+            int g = gcd(i, j);
+            if (!c[j / g][i / g]) {
+                ans++;
+                c[j / g][i / g] = 1;
+            }
         }
     }
-    printf("%lu", angles.size());
+    cout << ans;
 }
