@@ -5,5 +5,5 @@ int main() {
     scanf("%d %d %d",&N,&K,&P);
     int t,c=0;
     for(int i=0;i<N*K;i++){scanf("%d",&t);c+=t;}
-    printf("%d",c/(K-P+1));
+    printf("%d",c/(K-P+1)<N?c/(K-P+1):N);
 }
