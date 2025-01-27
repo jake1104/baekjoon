@@ -2,43 +2,6 @@
 #include <string>
 using namespace std;
 
-bool is_palindrome(const string& str) {
-    int left = 0, right = str.length() - 1;
-    while (left < right) {
-        if (str[left] != str[right]) {
-            return false;
-        }
-        left++;
-        right--;
-    }
-    return true;
-}
-
-int is_pseudopalindrome(const string& str) {
-    int left = 0, right = str.length() - 1;
-    while (left < right) {
-        if (str[left] != str[right]) {
-            string modified_str1 = str.substr(left + 1, right - left);
-            string modified_str2 = str.substr(left, right - left);
-            if (is_palindrome(modified_str1) || is_palindrome(modified_str2)) {
-                return 1;
-            }
-            return 2;
-        }
-        left++;
-        right--;
-    }
-    return 0;
-}
-
-int main() {
-    int t;
-    cin >> t;
-    cin.ignore();
-    while (t--) {
-        string str;
-        getline(cin, str);
-        cout << is_pseudopalindrome(str) << endl;
-    }
-    return 0;
-}
+bool p(const string& str) {int l=0, r=str.length()-1;while(l<r){if (str[l]!=str[r]) {return false;}l++;r--;}return true;}
+int pp(const string& str) {int l=0, r=str.length()-1;while(l<r){if (str[l]!=str[r]) {string s1=str.substr(l+1,r-l);string s2 = str.substr(l,r-l);if(p(s1)||p(s2))return 1;return 2;}l++;r--;}return 0;}
+int main() {int t;cin >> t;cin.ignore();while(t--){string str;getline(cin, str); cout << pp(str) << endl;}}
