@@ -13,11 +13,9 @@ int main() {
     for(int j=1;j<N;j++){
         for(int i=0;i<M;i++){
             int m=0;
-            for(int a=0;a<M;a++){
-                for(int b=0;b<j;b++){
-                    if(abs(i-a)<=j-b&&b<j)m=m>O[a][b]?m:O[a][b];
-                }
-            }
+            if(i>0)m=m>O[i-1][j-1]?m:O[i-1][j-1];
+            m=m>O[i][j-1]?m:O[i][j-1];
+            if(i<M-1)m=m>O[i+1][j-1]?m:O[i+1][j-1];
             O[i][j]=m+W[i][j];
             max=max>m?max:m;
         }
