@@ -5,24 +5,21 @@ int main(){
     for(int i=0;i<8;i++)k[i]=i;
     for(int i=0;i<N;i++){
         int a;scanf("%d",&a);
-        int x=0,y=0;
+        int x=-1,y=-1;
         int c=0;
         for(int i=0;i<8;i++){
             if(a%2==1){
-                if(c==0){
-                    x=i;c++;
-                }
-                else if(c==1){
-                    y=i;c++;
-                }
-                else{x=0;y=0;}
+                if(c==0){x=i;c++;}
+                else if(c==1){y=i;c++;}
+                else{x=-1;y=-1;}
             }
             a/=2;
         }
-        int t=k[x];
-        k[x]=k[y];
-        k[y]=t;
-        
+        if(!(x==-1||y==-1)){
+            int t=k[x];
+            k[x]=k[y];
+            k[y]=t;
+        }
     }
     int K;scanf("%d",&K);
     printf("%d",k[K]);
