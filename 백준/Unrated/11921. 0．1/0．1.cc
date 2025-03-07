@@ -1,25 +1,26 @@
+#include <cstdio>
 #include <iostream>
-int main(){
-    std::ios_base::sync_with_stdio(false);
-    std::cin.tie(nullptr);
-    std::cout.tie(nullptr);
-    int N;
-    std::cin>>N;
-    std::cin.ignore();
-    constexpr int BUFFER_SIZE=1<<20;
-    char buffer[BUFFER_SIZE];
-    int read_size=std::cin.read(buffer,BUFFER_SIZE).gcount();
+#include <vector>
+int main() {
+    while (std::getchar()!='\n');
+    constexpr size_t bufferSize=1<<26;
+    std::vector<char>buffer(bufferSize);
+    size_t bytesRead=std::fread(buffer.data(),1,bufferSize,stdin);
     long long sum=0;
-    int count=0,num=0;
-    for (int i=0;i<read_size;++i){
-        if (buffer[i]>='0'&&buffer[i]<='9'){
-            num=num*10+(buffer[i]-'0');
-        } else {
-            sum += num;
-            num = 0;
-            ++count;
-        }
+    int M=0;
+    long long current=0;
+    for(size_t i=0;i<bytesRead;++i){
+        char c=buffer[i];
+        if(c=='\n'){
+            sum+=current;
+            current=0;
+            ++M;
+        }else current=current*10+(c-'0');
     }
-    std::cout<<count<<'\n'<<sum<<'\n';
+    if(current!=0){
+        sum+=current;
+        ++M;
+    }
+    std::cout<<M<<'\n'<<sum<<'\n';
     return 0;
 }
