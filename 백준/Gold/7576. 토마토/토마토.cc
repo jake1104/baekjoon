@@ -8,19 +8,15 @@ int dy[4]={1,0,-1,0};
 bool V[1000][1000];
 int main(){
     scanf("%d %d",&M,&N);
+    queue<n>q;
     for(int i=0;i<N;i++){
         for(int j=0;j<M;j++){
             scanf("%d",&I[i][j]);
             V[i][j]=false;
-        }
-    }
-    int d=0;
-    queue<n>q;
-    for(int i=0;i<N;i++){
-        for(int j=0;j<M;j++){
             if(I[i][j]==1)q.push({i,j,0});
         }
     }
+    int d=0;
     while(!q.empty()){
         int x=q.front().x,y=q.front().y;
         if(!V[x][y]){
