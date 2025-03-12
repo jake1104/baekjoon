@@ -1,31 +1,22 @@
-#include<stdio.h>
-#include<queue>
+#include <stdio.h>
+#include <queue>
+#include <unordered_set>
 using namespace std;
-typedef struct{long long p,d;} Node;
+typedef long long ll;
+struct n{ll p,d;};
+int dx[2] = {-1, 1};
 int main(){
-    long long L, N, K;
-    scanf("%lld %lld %lld", &L, &N, &K);
-    long long A[N];
-    for(long long i=0;i<N; i++) scanf("%lld", &A[i]);
-    bool V[L+1]={false};
-    queue<Node> q;
-    for(long long i=0;i<N;i++){
-        q.push((Node){A[i],0});
-        V[A[i]]=true;
-    }
-    long long r[K];
-    int c=0;
-    while(!q.empty()&&c<K){
-        Node n = q.front(); q.pop();
-        if(c<K)r[c++]=n.d;
-        if(n.p>0&&!V[n.p-1]){
-            V[n.p-1]=true;
-            q.push((Node){n.p-1,n.d+1});
-        }
-        if(n.p<L&&!V[n.p+1]){
-            V[n.p+1]=true;
-            q.push((Node){n.p+1,n.d+1});
+    ll L;int N,K;
+    scanf("%lld %d %d",&L,&N,&K);
+    unordered_set<ll>V;
+    queue<n>q;
+    for(ll A,i=0;i<N;scanf("%lld",&A),q.push({A,0}),V.insert(A),i++);
+    for (int c=0;!q.empty()&&c<K;c++){
+        n t=q.front();q.pop();
+        printf("%lld\n",t.d);
+        for(int i=0;i<2;i++){
+            ll rx=t.p+dx[i];
+            if(0<=rx&&rx<=L&&V.insert(rx).second)q.push({rx,t.d+1});
         }
     }
-    for(int i=0;i<K;i++)printf("%lld\n", r[i]);
 }
