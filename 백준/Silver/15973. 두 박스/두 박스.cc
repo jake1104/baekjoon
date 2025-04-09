@@ -1,11 +1,14 @@
 #include<iostream>
 using namespace std;
-int main() {
-    int x11,y11,x12,y12;
-    int x21,y21,x22,y22;
-    cin>>x11>>y11>>x12>>y12>>x21>>y21>>x22>>y22;
-    if((x22==x11&&y22==y12+y22-y21)||(x22==x11&&y22==y11)||(x22==x12+x22-x21&&y22==y11)||(x22==x12+x22-x21&&y22==y12+y22-y21))cout<<"POINT"; 
-    else if((x11<x22&&x22<x12+x22-x21&&(y22==y12+y22-y21||y22==y11))||(y11<y22&&y22<y12+y22-y21&&(x22==x11||x22==x12+x22-x21)))cout<<"LINE";
-    else if(x22<x12+x22-x21&&y22<y12+y22-y21&&x11-(x22-x21)<x21&&y11-(y22-y21)<y21)cout<<"FACE";
+int main(){
+    int x1,y1,x2,y2,x3,y3,x4,y4;
+    cin>>x1>>y1>>x2>>y2>>x3>>y3>>x4>>y4;
+    if(x1>x2)swap(x1,x2);if(y1>y2)swap(y1,y2);
+    if(x3>x4)swap(x3,x4);if(y3>y4)swap(y3,y4);
+    int x=max(x1,x3),xx=min(x2,x4),y=max(y1,y3),yy=min(y2,y4);
+    int w=xx-x,h=yy-y;
+    if(w>0&&h>0)cout<<"FACE";
+    else if((w==0&&h>0)||(w>0&&h==0))cout<<"LINE";
+    else if(w==0&&h==0)cout<<"POINT";
     else cout<<"NULL";
 }
