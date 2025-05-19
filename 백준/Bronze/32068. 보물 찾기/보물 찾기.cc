@@ -8,19 +8,15 @@ int main() {
 	for (int i = 0; i < T; i++) {
 		scanf("%d %d %d", &C[i][0], &C[i][1], &C[i][2]);
 	}
-	int R, P;
+	int LR, RR;
 	for (int i = 0; i < T; i++) {
-		R = 1;
-		P = C[i][2];
-		while (!(P == C[i][0] || P == C[i][1])) {
-			R++;
-			if (R % 2 == 0) {
-				P += R - 1;
-			}
-			else {
-				P -= R - 1;
-			}
+		LR = (C[i][2] - C[i][0]) * 2 + 1;
+		RR = (C[i][1] - C[i][2]) * 2;
+		if (LR > RR) {
+			printf("%d\n", RR);
 		}
-		printf("%d\n", R);
+		else {
+			printf("%d\n", LR);
+		}
 	}
 }
