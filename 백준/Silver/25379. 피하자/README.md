@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 258400 KB, 시간: 452 ms
+메모리: 2020 KB, 시간: 0 ms
 
 ### 분류
 
@@ -12,7 +12,7 @@
 
 ### 제출 일자
 
-2024년 4월 7일 10:52:16
+2025년 9월 6일 16:46:28
 
 ### 문제 설명
 
@@ -20,7 +20,7 @@
 
 <p>예를 들어, 아래 그림과 같이 A = [4, 5, 1, 0]인 상황을 살펴보자. 이 경우, 마지막 두 원소를 교환하는 시행 과 가운데 두 원소를 교환하는 시행을 차례로 수행하면 A가 [4, 0, 5, 1]이 되어 홀수와 짝수가 인접한 경우가 최대 1번 등장하도록 할 수 있다.</p>
 
-<p style="text-align: center;"><img alt="" src="" style="width: 203px; height: 250px;"></p>
+<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/f67afa9a-1465-4db3-8bb4-29e6d107cec5/-/preview/" style="width: 203px; height: 250px;"></p>
 
 ### 입력 
 
