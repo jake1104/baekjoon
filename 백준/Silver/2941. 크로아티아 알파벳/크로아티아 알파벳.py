@@ -1,1 +1,1 @@
-print(len(input().replace("c=","a").replace("c-","a").replace("dz=","a").replace("d-","a").replace("lj","a").replace("nj","a").replace("s=","a").replace("z=","a")))
+a=input();print(len(a)-a.count("c=")-a.count("c-")-a.count("dz=")-a.count("d-")-a.count("lj")-a.count("nj")-a.count("s=")-a.count("z="))
