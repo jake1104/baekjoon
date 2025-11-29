@@ -1,4 +1,4 @@
-#include<iostream>
+#include<stdio.h>
 #include<bitset>
 #include<vector>
 using namespace std;
@@ -7,11 +7,11 @@ void k(short a){
     D[a]=0;L[a]=0;for(short i=0;i<N;i++)
         if(A[i]==a)k(i);
 }int main(){
-    cin>>N;
-    A=vector<short>(N);for(short i=0;i<N;i++)cin>>A[i];
+    scanf("%d",&N);
+    A=vector<short>(N);for(short i=0;i<N;i++)scanf("%d",&A[i]);
     D.set();L.set();
-    int I;cin>>I;k(I);
+    int I;scanf("%d",&I);k(I);
     for(short i=0;i<N;i++)
         if(A[i]!=-1&&D[i])L[A[i]]=0;
-    cout<<L.count()-51+N;
+    printf("%d",L.count()-51+N);
 }
