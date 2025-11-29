@@ -5,10 +5,10 @@ void k(short a){
     D[a]=0;L[a]=0;for(short i=0;i<N;i++)
         if(A[i]==a)k(i);
 }int main(){
-    scanf("%hd",&N);for(short i=0;i<N;i++)scanf("%hd",&A[i]);
+    scanf("%d",&N);for(short i=0;i<N;i++)scanf("%d",&A[i]);
     D.set();L.set();
-    short I;scanf("%hd",&I);k(I);
+    int I;scanf("%d",&I);k(I);
     for(short i=0;i<N;i++)
         if(A[i]!=-1&&D[i])L[A[i]]=0;
-    printf("%lu",L.count()-51+N);
+    printf("%d",L.count()-51+N);
 }
