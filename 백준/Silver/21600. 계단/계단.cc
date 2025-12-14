@@ -4,7 +4,7 @@ using namespace std;
 int main(){
     int N;cin>>N;
     int A[N];for(int i=0;i<N;i++)cin>>A[i];
-    int t=0,m=0;
+    int t=1,m=1;
     for(int i=0;i<N;i++){
         while(t>A[i])t--;
         t=t>0?t:0;
