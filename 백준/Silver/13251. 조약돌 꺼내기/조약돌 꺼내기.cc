@@ -10,7 +10,7 @@ double C(int n,int r){
 }int main(){
     int M;cin>>M;
     int j[M],s=0;
-    for (int i = 0; i < M; i++){cin>>j[i];s+=j[i];}
+    for (int i=0;i<M;i++){cin>>j[i];s+=j[i];}
     int K;cin>>K;
     double r=0.0;for(int i=0;i<M;i++)r+=C(j[i],K)/C(s, K);
     cout<<fixed;
