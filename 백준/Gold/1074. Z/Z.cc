@@ -1,13 +1,11 @@
-#include<stdio.h>
+#include<iostream>
+using namespace std;
 int main(){
-    int N,r,c;scanf("%d %d %d",&N,&r,&c);
-    int n=1;
-    for(int i=0;i<N;i++)n*=2;
-    int s=0;
+    int N,r,c,n=1,s=0;cin>>N>>r>>c;
+    for(int i=0;i<N;i++)n<<=1;
     while(n!=1){
-        if(r>=n/2){r-=n/2;s+=n*n/2;}
-        if(c>=n/2){c-=n/2;s+=n*n/4;}
-        n/=2;
-    }
-    printf("%d",s);
+        if(r>=n>>1){r-=n>>1;s+=(n*n)>>1;}
+        if(c>=n>>1){c-=n>>1;s+=(n*n)>>2;}
+        n>>=1;
+    }cout<<s;
 }
